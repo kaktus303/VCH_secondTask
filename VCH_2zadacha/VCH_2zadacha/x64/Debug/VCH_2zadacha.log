@@ -1,0 +1,15 @@
+﻿  Sourse.cpp
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(17,6): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(18,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(19,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(20,11): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(22,11): warning C4101: k: неиспользованная локальная переменная
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(21,159): warning C4101: pol1: неиспользованная локальная переменная
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(21,66): warning C4101: Divdif1: неиспользованная локальная переменная
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(21,150): warning C4101: pol0: неиспользованная локальная переменная
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(22,8): warning C4101: j: неиспользованная локальная переменная
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(21,168): warning C4101: c: неиспользованная локальная переменная
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(21,89): warning C4101: x: неиспользованная локальная переменная
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(22,14): warning C4101: o: неиспользованная локальная переменная
+D:\sasha\C projects\VCH_2zadacha\VCH_2zadacha\Sourse.cpp(21,122): warning C4101: b1: неиспользованная локальная переменная
+  VCH_2zadacha.vcxproj -> D:\sasha\C projects\VCH_2zadacha\x64\Debug\VCH_2zadacha.exe
