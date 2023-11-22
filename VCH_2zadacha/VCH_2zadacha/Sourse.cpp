@@ -10,26 +10,41 @@ double f(double x)
 }
 double F(double x)
 {
-	return (M_PI * cos(M_PI * x));
+	return (-1 * (1/M_PI) * cos(M_PI * x));
 }
-double Simpson(N)
+double Simpson(int N, double a1, double b1)
 {
 
-	double sum = 0.0, step = 2/N-1,a = -1,b = 1;
-	for (int i = 1; i <= ((N - 1) / 2) - 1; ++i)
+	double sum = 0.0, step = (b1-a1)/N,a = a1,b = b1;
+	printf("%lg\n", step);
+	for (int i = 1; i <= ((N) / 2) - 1; ++i)
 	{
-		sum = sum + f(a + step*(2*i));
+		sum = sum + 2 * f(a + step*(2*i));
 	}
-	sum = sum * 2;
-	for (int i = 1; i <= (N - 1) / 2; ++i)
+	printf("%lf\n", sum);
+	for (int i = 1; i <= (N) / 2; ++i)
 	{
-		sum = sum + f(a + step*((2 * i) - 1));
+		sum = sum + 4 * f(a + step*((2 * i) - 1));
 	}
-	sum = sum * 4;
-	sum += f(-1);
-	sum += f(1);
-	sum *= step;
-	sum = sum / 3;
+	printf("%lf\n", sum);
+	sum += f(a);
+	sum += f(b);
+	sum *= step/3;
+	return sum;
+}
+double Gauss(int N, double a, double b)
+{
+	double sum = 0.0, step = (b - a) / N,a1,b1,sum1 = 0.0;
+	for (int i = 1; i < N; ++i)
+	{
+		sum1 = 0.0;
+		a1 = a + step * i;
+		b1 = a1 + step;
+		sum1 += f((a1 + b1) / 2 + ((b1 - a1)/2) * (-1/sqrt(3)));
+		sum1 += f((a1 + b1) / 2 + ((b1 - a1) / 2) * (1 / sqrt(3)));
+		sum1 *= (b1 - a1) / 2;
+		sum += sum1;
+	}
 	return sum;
 }
 void PrintMassive(double* A, int n)
@@ -69,5 +84,5 @@ int main()
 	sum = sum / 3;
 	printf("**%f**\n", sum);
 	printf("%f\n%f\n", F(b) - F(a),f(1) - f(-1));*/
-	printf("%f", Simpson(17));
+	printf("\n%lf\n%f\n%lf", Simpson(6000, 4,9), F(9) - F(4),Gauss(6000,4,9));
 }
