@@ -37,16 +37,17 @@ double Simpson(int N, double a1, double b1)
 }
 double Gauss(int N, double a, double b)
 {
-	double sum = 0.0, step = (b - a) / N, a1, b1, sum1 = 0.0;
-	for (int i = 1; i < N; ++i)
+	double sum = 0.0, step = (b - a) / N, a1, b1, sum1 = 0.0,sq= sqrt(3);
+	for (int i = 0; i < N; ++i)
 	{
 		sum1 = 0.0;
 		a1 = a + step * i;
 		b1 = a1 + step;
-		sum1 += f((a1 + b1) / 2 + ((b1 - a1) / 2) * (-1 / sqrt(3)));
-		sum1 += f((a1 + b1) / 2 + ((b1 - a1) / 2) * (1 / sqrt(3)));
-		sum1 *= (b1 - a1) / 2;
+		sum1 += f((a1 + b1)*0.5 - ((b1 - a1)*0.5) * (1 / sq));
+		sum1 += f((a1 + b1)*0.5 + ((b1 - a1)*0.5) * (1 / sq));
+		sum1 *= (b1 - a1)*0.5;
 		sum += sum1;
+		//printf("%lg\n", sum1);
 	}
 	return sum;
 }
@@ -60,7 +61,7 @@ void PrintMassive(double* A, int n)
 }
 int main()
 {
-	int N = 80;
+	int N = 4;
 	double p,a = -1,b = 1.5,r;
 	clock_t start, end, diff;
 	start = clock();
@@ -81,7 +82,7 @@ int main()
 	printf("Pogreshnoct Simpson: %lg\n", fabs(Simpson(N, a, b) - Leib(a, b)));
 	printf("Pogreshnoct Gauss: %lg\n", fabs(Gauss(N,a,b) - Leib(a, b)));
 	printf("Pogreshnost teor Simpson: %lg\n",((pow(2,p)/(pow(2,p) - 1)) * (Simpson(N,a,b) - Simpson(N*2,a,b))));
-	printf("Pogreshnost teor Gauss: %lg", fabs((pow(2, p) / (pow(2, p) - 1)) * (Gauss(N, a, b) - Gauss(N * 2, a, b))));
-	printf("Gauss: 2n + 2; Simpson: 2n + 9");
+	printf("Pogreshnost teor Gauss: %lg\n", fabs((pow(2, p) / (pow(2, p) - 1)) * (Gauss(N, a, b) - Gauss(N * 2, a, b))));
+	printf("Gauss: 27n + 3; Simpson: 7(n-1) + 9");
 }
 
