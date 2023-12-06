@@ -77,8 +77,12 @@ int main()
 	printf("Integral Gauss: %f\n", Gauss(N, a, b));
 	p = log2(((Simpson(N, a, b) - Leib(a, b)) / (Simpson(N * 2, a, b) - Leib(a, b))));
 	printf("Porydok Simpson: %f\n",p);
+	p = log2(((Simpson(N*2, a, b) - Simpson(N, a, b)) / (Simpson(N * 4, a, b) - Simpson(N*2, a, b))));
+	printf("Porydok Simpson111: %f\n", p);
 	p = log2(((Gauss(N, a, b) - Leib(a, b)) / (Gauss(N * 2, a, b) - Leib(a, b))));
 	printf("Porydok Gauss: %lf\n", p);
+	p = log2(((Gauss(N * 2, a, b) - Gauss(N, a, b)) / (Gauss(N * 4, a, b) - Gauss(N * 2, a, b))));
+	printf("Porydok Gauss111: %f\n", p);
 	printf("Pogreshnoct Simpson: %lg\n", fabs(Simpson(N, a, b) - Leib(a, b)));
 	printf("Pogreshnoct Gauss: %lg\n", fabs(Gauss(N,a,b) - Leib(a, b)));
 	printf("Pogreshnost teor Simpson: %lg\n",((pow(2,p)/(pow(2,p) - 1)) * (Simpson(N,a,b) - Simpson(N*2,a,b))));
