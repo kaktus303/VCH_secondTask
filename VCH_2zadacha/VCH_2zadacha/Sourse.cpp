@@ -47,7 +47,7 @@ double Gauss(int N, double a, double b)
 		sum1 += f((a1 + b1)*0.5 + ((b1 - a1)*0.5) * (1 / sq));
 		sum1 *= (b1 - a1)*0.5;
 		sum += sum1;
-		//printf("%lg\n", sum1);
+		//printf("55555%lg\n", sum1);
 	}
 	return sum;
 }
